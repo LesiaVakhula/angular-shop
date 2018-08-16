@@ -1,0 +1,14 @@
+<h2>Product in Shop Cart:</h2>
+<section class="product-list" *ngIf="productListCart.length; else messageBlock">
+  <div class="product-row" *ngFor="let item of productListCart">
+    <p > {{item.name}}</p>
+    <p>id: {{item.id}}</p>
+    <p>Price: {{item.price}}</p>
+    <button mat-button (click)="deleteProduct(item.id)">Remove</button>
+  </div>
+</section>
+<ng-template #messageBlock>
+  <p class="empty-block">
+    Shop Cart is empty!!!
+  </p>
+</ng-template>
