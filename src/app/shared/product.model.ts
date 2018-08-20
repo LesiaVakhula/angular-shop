@@ -1,4 +1,4 @@
-enum ProductCategory {
+export enum ProductCategory {
     book = 1,
     pen,
     pencil

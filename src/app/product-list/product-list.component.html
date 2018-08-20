@@ -3,6 +3,7 @@
 	<app-product 
 		class="product-item" 
 		*ngFor="let product of productList" 
-		[productData]="product">
+		[productData]="product"
+		(buyOneProduct)="buyProduct($event)">
 	</app-product>
 </div>

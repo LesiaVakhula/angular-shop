@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product } from '../shared/product.model';
-import { ShopCartService } from '../cart/shop-cart.service';
+import { Product, ProductCategory } from '../shared/product.model';
 
 @Component({
   selector: 'app-product',
@@ -9,23 +8,24 @@ import { ShopCartService } from '../cart/shop-cart.service';
 })
 export class ProductComponent implements OnInit {
   @Input() productData: Product;
+  @Output() buyOneProduct: EventEmitter<Product> = new EventEmitter<Product>();
   productCategory: string;
 
-  constructor(private shopCartService: ShopCartService) { }
+  constructor() { }
 
   ngOnInit() {
     switch (this.productData.category) {
-      case 1: this.productCategory = 'Book';
+      case ProductCategory.book: this.productCategory = 'Book';
         break;
-      case 2: this.productCategory = 'Pen';
+      case ProductCategory.pen: this.productCategory = 'Pen';
         break;
-      case 3: this.productCategory = 'Pencil';
+      case ProductCategory.pencil: this.productCategory = 'Pencil';
     }
   }
 
   onBuy() {
     console.log(`Congratulation! You've bought the ${this.productData.name}!!!`);
-    this.shopCartService.addProduct(this.productData);
+    this.buyOneProduct.emit(this.productData);
   }
 
 }
