@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProductsService } from './products.service';
-import { ShopCartService } from '../cart/shop-cart.service';
-import { Product } from '../shared/product.model';
+import { ShopCartService } from '../../cart/shop-cart/shop-cart.service';
+import { Product } from '../../shared/product.model';
 
 @Component({
   selector: 'app-product-list',

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../shared/product.model';
+import { Product } from '../../shared/product.model';
 import { PRODUCTS } from './products-data';
 
 @Injectable({

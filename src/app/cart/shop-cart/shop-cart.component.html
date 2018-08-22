@@ -1,0 +1,18 @@
+<h2>Product in Shop Cart:</h2>
+<section class="product-list" *ngIf="productListCart.length; else messageBlock">
+  <app-shop-cart-item
+    appStyleItemShop 
+    *ngFor="let item of productListCart" 
+    [productItem]="item"
+    (deleteItem)="deleteProduct($event)">
+</app-shop-cart-item> 
+<app-result-shop-cart 
+  [totalSum]="getAmount()"
+  [quantity]="getQuantity()">
+</app-result-shop-cart>
+</section>
+<ng-template #messageBlock>
+  <p class="empty-block">
+    Shop Cart is empty!!!
+  </p>
+</ng-template>

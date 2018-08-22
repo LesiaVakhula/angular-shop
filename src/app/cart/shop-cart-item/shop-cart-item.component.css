@@ -1,0 +1,10 @@
+.product-row{
+    display: flex;
+    justify-content: space-around;
+    height: 45px;
+    width: 60%;
+}
+
+.product-row p{
+    width: 150px;
+}

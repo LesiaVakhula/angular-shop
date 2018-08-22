@@ -1,1 +1,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.product-shop-item{
+    /* background: #98eaec; */
+    font-weight: bold;
+}

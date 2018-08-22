@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { Product } from './shared/product.model';
 
 @Component({
@@ -6,11 +6,12 @@ import { Product } from './shared/product.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  productShopCart: Product[] = [];
+export class AppComponent implements AfterViewInit {
 
-  putProductToCart(product: Product): void {
-    this.productShopCart.push(product);
-    console.log(this.productShopCart);
+  @ViewChild('appTitle')
+  title: ElementRef;
+
+  ngAfterViewInit() {
+   this.title.nativeElement.innerText = 'Internet-Shop';
   }
 }

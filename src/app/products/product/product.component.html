@@ -1,4 +1,4 @@
-<mat-card class="product">
+<mat-card class="product" [ngClass]="{notAvailable : !productData.isAvailable}">
 	<div class="product-img">
 		<img [src]="productData.imgUrl" alt="product">
 	</div>

@@ -4,16 +4,6 @@
     width: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
-.product-row{
-    display: flex;
-    justify-content: space-around;
-    height: 35px;
-    width: 60%;
-}
-
-.product-row p{
-    width: 150px;
-}
 
 .empty-block{
     font-family: Arial, Helvetica, sans-serif;

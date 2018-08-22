@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import { StyleItemShopDirective } from './style-item-shop.directive';
 
 @NgModule({
   imports: [
@@ -21,8 +22,9 @@ import {MatTableModule} from '@angular/material/table';
     BrowserAnimationsModule,
     MatTooltipModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    StyleItemShopDirective
   ],
-  declarations: []
+  declarations: [StyleItemShopDirective]
 })
 export class SharedModule { }
