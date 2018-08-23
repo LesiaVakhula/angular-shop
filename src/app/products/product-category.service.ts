@@ -12,10 +12,8 @@ export class ProductCategoryService {
     switch (category) {
       case ProductCategory.book:
         return 'Book';
-        // break;
       case ProductCategory.pen:
         return 'Pen';
-        // break;
       case ProductCategory.pencil:
         return 'Pencil';
     }
