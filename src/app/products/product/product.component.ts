@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Product, ProductCategory } from '../../shared/product.model';
+import { ProductCategoryService } from '../product-category.service';
 
 @Component({
   selector: 'app-product',
@@ -11,16 +12,10 @@ export class ProductComponent implements OnInit {
   @Output() buyOneProduct: EventEmitter<Product> = new EventEmitter<Product>();
   productCategory: string;
 
-  constructor() { }
+  constructor( private productCategoryService: ProductCategoryService ) { }
 
   ngOnInit() {
-    switch (this.productData.category) {
-      case ProductCategory.book: this.productCategory = 'Book';
-        break;
-      case ProductCategory.pen: this.productCategory = 'Pen';
-        break;
-      case ProductCategory.pencil: this.productCategory = 'Pencil';
-    }
+    this.productCategory = this.productCategoryService.getCategory(this.productData.category);
   }
 
   onBuy() {
