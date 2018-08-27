@@ -9,7 +9,8 @@ import { ProductCategoryService } from '../product-category.service';
 })
 export class ProductComponent implements OnInit {
   @Input() productData: Product;
-  @Output() buyOneProduct: EventEmitter<Product> = new EventEmitter<Product>();
+  @Output() buyOneProduct: EventEmitter<{product?: Product, action: string, id?: number}> =
+                          new EventEmitter<{product?: Product, action: string, id?: number}>();
   productCategory: string;
 
   constructor( private productCategoryService: ProductCategoryService ) { }
@@ -20,7 +21,7 @@ export class ProductComponent implements OnInit {
 
   onBuy() {
     console.log(`Congratulation! You've bought the ${this.productData.name}!!!`);
-    this.buyOneProduct.emit(this.productData);
+    this.buyOneProduct.emit({ product: this.productData, action: 'add'});
   }
 
 }

@@ -12,5 +12,6 @@ export interface Product {
     isAvailable: boolean;
     category: ProductCategory;
     imgUrl: string;
+    quantity?: number;
 }
 

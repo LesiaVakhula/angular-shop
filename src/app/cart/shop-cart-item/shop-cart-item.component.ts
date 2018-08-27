@@ -6,19 +6,22 @@ import { Product } from '../../shared/product.model';
   selector: 'app-shop-cart-item',
   templateUrl: './shop-cart-item.component.html',
   styleUrls: ['./shop-cart-item.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShopCartItemComponent implements OnInit {
   @Input() productItem: Product;
-  @Output() deleteItem: EventEmitter<number> = new EventEmitter<number>();
+  @Output() deleteItem: EventEmitter<{product?: Product, action: string, id?: number}> =
+                        new EventEmitter<{product?: Product, action: string, id?: number}>();
 
-  constructor( private shopCartService: ShopCartService) { }
+  constructor(
+    private shopCartService: ShopCartService
+  ) {
+   }
 
   ngOnInit() {
   }
 
-  deleteProduct(id: number) {
-    this.deleteItem.emit(id);
+  deleteProduct(obj) {
+    this.deleteItem.emit(obj);
   }
 
 }

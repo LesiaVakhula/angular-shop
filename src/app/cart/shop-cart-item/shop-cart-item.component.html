@@ -1,6 +1,7 @@
 <div class="product-row" >
   <p> {{productItem.name}}</p>
   <p>id: {{productItem.id}}</p>
+  <p>quantity: {{productItem.quantity}}</p>
   <p>Price: {{productItem.price}}</p>
-  <button mat-button (click)="deleteProduct(productItem.id)">Remove</button>
+  <button mat-button (click)="deleteProduct({action: 'remove', id: productItem.id})">Remove</button>
 </div>

@@ -23,8 +23,10 @@ export class ProductListComponent implements OnInit {
   getProductList(): void {
     this.productList = this.productsService.getProductList();
   }
-  buyProduct(product: Product): void {
-    this.shopCartService.addProduct(product);
+
+  buyProduct(obj): void {
+    // this.shopCartService.addProduct(product);
+    this.shopCartService.changeProduct(obj);
   }
 
 }

@@ -7,6 +7,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { StyleItemShopDirective } from './style-item-shop.directive';
+import { ChangeStylesDirective } from './directives/change-styles.directive';
 
 @NgModule({
   imports: [
@@ -23,8 +24,9 @@ import { StyleItemShopDirective } from './style-item-shop.directive';
     MatTooltipModule,
     MatCardModule,
     MatTableModule,
-    StyleItemShopDirective
+    StyleItemShopDirective,
+    ChangeStylesDirective
   ],
-  declarations: [StyleItemShopDirective]
+  declarations: [StyleItemShopDirective, ChangeStylesDirective]
 })
 export class SharedModule { }

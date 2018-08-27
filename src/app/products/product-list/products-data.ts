@@ -8,7 +8,8 @@ export const PRODUCTS: Product[] = [
         description: 'something about this book',
         isAvailable: true,
         category: 1,
-        imgUrl: '../assets/sherlock_holmes.jpg'
+        imgUrl: '../assets/sherlock_holmes.jpg',
+        quantity: 1
     },
     {
         name: 'Red pen',
@@ -17,7 +18,8 @@ export const PRODUCTS: Product[] = [
         description: 'something about this pen',
         isAvailable: false,
         category: 2,
-        imgUrl: '../assets/pens.jpg'
+        imgUrl: '../assets/pens.jpg',
+        quantity: 1
     },
     {
         name: 'pencil',
@@ -26,6 +28,7 @@ export const PRODUCTS: Product[] = [
         description: 'something about this pencil',
         isAvailable: true,
         category: 3,
-        imgUrl: '../assets/pencil.jpg'
+        imgUrl: '../assets/pencil.jpg',
+        quantity: 1
     }
 ];
