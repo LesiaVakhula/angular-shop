@@ -3,5 +3,7 @@
   <p>id: {{productItem.id}}</p>
   <p>quantity: {{productItem.quantity}}</p>
   <p>Price: {{productItem.price}}</p>
+  <p>Total: {{productItem.price*productItem.quantity}}</p>
+  <p>Date: {{date | date:"dd/MM/yyyy"}}</p>
   <button mat-button (click)="deleteProduct({action: 'remove', id: productItem.id})">Remove</button>
 </div>

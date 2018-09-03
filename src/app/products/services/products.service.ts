@@ -9,7 +9,7 @@ export class ProductsService {
 
   constructor() { }
 
-  getProductList() {
-    return PRODUCTS;
+  getProductList(): Promise<Product[]> {
+    return Promise.resolve(PRODUCTS);
   }
 }

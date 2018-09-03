@@ -2,7 +2,7 @@
 <div class="product-list">
 	<app-product 
 		class="product-item" 
-		*ngFor="let product of productList" 
+		*ngFor="let product of productList | async" 
 		[productData]="product"
 		(buyOneProduct)="buyProduct($event)">
 	</app-product>

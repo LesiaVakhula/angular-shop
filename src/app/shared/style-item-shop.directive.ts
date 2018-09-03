@@ -14,12 +14,12 @@ export class StyleItemShopDirective {
   ) {}
 
   @HostListener('mouseenter')
-  OnMouseEnter() {
+  onMouseEnter() {
     this.changeBacground('#98eaec');
   }
 
   @HostListener('mouseleave')
-  OnMouseLeave() {
+  onMouseLeave() {
     this.changeBacground(null);
   }
   private changeBacground(backgroundColor: string) {

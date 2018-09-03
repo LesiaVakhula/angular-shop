@@ -6,7 +6,7 @@ import { Directive, Input, ElementRef, Renderer2, HostListener } from '@angular/
 export class ChangeStylesDirective {
   @Input('appChangeStyles') data: string;
 
-  constructor(private element: ElementRef, private render: Renderer2) {}
+  constructor(private element: ElementRef, private render: Renderer2) { }
 
   @HostListener('click')
   onClick() {

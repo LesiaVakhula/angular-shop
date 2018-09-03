@@ -11,13 +11,10 @@ export class ShopCartItemComponent implements OnInit {
   @Input() productItem: Product;
   @Output() deleteItem: EventEmitter<{product?: Product, action: string, id?: number}> =
                         new EventEmitter<{product?: Product, action: string, id?: number}>();
-
-  constructor(
-    private shopCartService: ShopCartService
-  ) {
-   }
+  date: number;
 
   ngOnInit() {
+    this.date = Date.now();
   }
 
   deleteProduct(obj) {

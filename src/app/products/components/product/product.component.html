@@ -3,9 +3,9 @@
 		<img [src]="productData.imgUrl" alt="product">
 	</div>
 	<div>
-		<p>Category: {{productCategory}}</p>
-		<p>{{productData.name}}</p>
-		<p>price: {{productData.price}}</p>
+		<p>Category: {{productData.category | category}}</p>
+		<p>{{productData.name | uppercase}}</p>
+		<p>price: {{productData.price | currency}}</p>
 		<p>Available: {{productData.isAvailable?'Yes':'No'}}</p>
 		<button 
 			(click)="onBuy()" 

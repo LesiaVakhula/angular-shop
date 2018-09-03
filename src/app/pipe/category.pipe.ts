@@ -1,15 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 import { ProductCategory } from '../shared/product.model';
 
-@Injectable({
-  providedIn: 'root'
+@Pipe({
+  name: 'category'
 })
-export class ProductCategoryService {
+export class CategoryPipe implements PipeTransform {
 
-  constructor() { }
+  transform(value: number, args?: any): any {
 
-  getCategory(category: number): string {
-    switch (category) {
+    switch (value) {
       case ProductCategory.book:
         return 'Book';
       case ProductCategory.pen:
@@ -17,5 +16,7 @@ export class ProductCategoryService {
       case ProductCategory.pencil:
         return 'Pencil';
     }
+    // return null;
   }
+
 }

@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductComponent } from './product/product.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductComponent } from './components/product/product.component';
 import { SharedModule } from '../shared/shared.module';
+import { CategoryPipe } from '../pipe/category.pipe';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   declarations: [
     ProductListComponent,
-    ProductComponent
+    ProductComponent,
+    CategoryPipe
   ],
   exports: [ProductListComponent]
 })

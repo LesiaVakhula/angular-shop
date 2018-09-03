@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Product, ProductCategory } from '../../shared/product.model';
-import { ProductCategoryService } from '../product-category.service';
+import { Product, ProductCategory } from '../../../shared/product.model';
 
 @Component({
   selector: 'app-product',
@@ -11,13 +10,10 @@ export class ProductComponent implements OnInit {
   @Input() productData: Product;
   @Output() buyOneProduct: EventEmitter<{product?: Product, action: string, id?: number}> =
                           new EventEmitter<{product?: Product, action: string, id?: number}>();
-  productCategory: string;
 
-  constructor( private productCategoryService: ProductCategoryService ) { }
+  constructor( ) { }
 
-  ngOnInit() {
-    this.productCategory = this.productCategoryService.getCategory(this.productData.category);
-  }
+  ngOnInit() { }
 
   onBuy() {
     console.log(`Congratulation! You've bought the ${this.productData.name}!!!`);

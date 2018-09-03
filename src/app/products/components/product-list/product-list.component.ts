@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ProductsService } from './products.service';
-import { ShopCartService } from '../../cart/shop-cart/shop-cart.service';
-import { Product } from '../../shared/product.model';
+import { ProductsService } from '../../services/products.service';
+import { ShopCartService } from '../../../cart/shop-cart/shop-cart.service';
+import { Product } from '../../../shared/product.model';
 
 @Component({
   selector: 'app-product-list',
@@ -9,7 +9,7 @@ import { Product } from '../../shared/product.model';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  productList: Product[];
+  productList: Promise<Product[]>;
 
   constructor(
     private productsService: ProductsService,
@@ -25,7 +25,6 @@ export class ProductListComponent implements OnInit {
   }
 
   buyProduct(obj): void {
-    // this.shopCartService.addProduct(product);
     this.shopCartService.changeProduct(obj);
   }
 
