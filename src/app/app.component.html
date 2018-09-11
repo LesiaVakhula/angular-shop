@@ -1,5 +1,31 @@
-<h1 #appTitle></h1>
-<app-product-list></app-product-list>
-<app-shop-cart></app-shop-cart>
-
+<header> 
+    <button 
+        class="btn-to-shop-cart"
+        mat-button
+        routerLink = "/shopcart">
+        Shop Cart
+    </button>
+    <button 
+        class="btn-to-admin"
+        mat-button
+        routerLink = "/admin">
+        Admin
+    </button>
+    <button 
+        class="btn-login"
+        mat-button
+        routerLink = "/login">
+        Log in
+    </button>
+    <button 
+        class="btn-login"
+        mat-button
+        (click)="logout()">
+        Log out
+    </button>
+</header>
+<h1 class="title" #appTitle></h1>
+<!-- <app-product-list></app-product-list>
+<app-shop-cart></app-shop-cart> -->
+<router-outlet></router-outlet>
 <app-contuct-us></app-contuct-us>

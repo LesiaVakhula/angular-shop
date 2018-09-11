@@ -1,0 +1,7 @@
+<app-shop-cart 
+    [productListCart] = "productList"
+    [quantity]="getAmount()"
+    [sum]="getQuantity()"
+    (confirmOrder)="confirmOrder($event)">
+</app-shop-cart>
+<!-- <app-shop-cart ></app-shop-cart> -->

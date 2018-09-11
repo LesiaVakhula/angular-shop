@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { ShopCartService } from '../shop-cart/shop-cart.service';
-import { Product } from '../../shared/product.model';
+import { ShopCartService } from '../../services/shop-cart.service';
+import { Product } from '../../../shared/product.model';
 
 @Component({
   selector: 'app-shop-cart-item',

@@ -5,14 +5,20 @@
     *ngFor="let item of productListCart" 
     [productItem]="item"
     (deleteItem)="deleteProduct($event)">
-</app-shop-cart-item> 
-<app-result-shop-cart 
-  [totalSum]="getAmount()"
-  [quantity]="getQuantity()">
-</app-result-shop-cart>
+  </app-shop-cart-item> 
+  <app-result-shop-cart 
+    [totalSum]="sum"
+    [quantity]="quantity">
+  </app-result-shop-cart>
+  <button mat-button (click)="onConfirm()">Confirm</button>
 </section>
 <ng-template #messageBlock>
   <p class="empty-block">
     Shop Cart is empty!!!
   </p>
 </ng-template>
+<button 
+  mat-raised-button        
+  (click)="goBack()">
+  Back
+</button>

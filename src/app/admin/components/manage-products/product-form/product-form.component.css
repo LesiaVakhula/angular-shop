@@ -1,0 +1,26 @@
+.product-form{
+    width: 300px;
+}
+.product-form-edit{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.product-form-edit input{
+    height: 30px;
+    width: 100%;
+}
+.product-form-edit textarea{
+    height: 60px;
+    width: 100%;
+}
+.product-form-edit label{
+    font-size: 20px;    
+    height: 30px;    
+    width: 65%;
+}
+.product-form-edit input[type="checkbox"]{
+    /* align-self: flex-start; */
+    width: auto;
+    height: 20px;
+}

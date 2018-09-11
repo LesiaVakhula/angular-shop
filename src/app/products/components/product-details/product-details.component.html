@@ -1,0 +1,19 @@
+<mat-card class="product">
+    <div class="product-img">
+      <img [src]="productDetais.imgUrl" alt="product">
+    </div>
+    <div>
+      <!-- <p>Category: {{productDetais.category | category}}</p> -->
+      <p>{{productDetais.name | uppercase}}</p>
+      <p>price: {{productDetais.price | currency}}</p>
+      <p>Available: {{productDetais.isAvailable?'Yes':'No'}}</p>
+      <button 
+        (click)="onBuy()" 
+        mat-raised-button
+        matTooltip="Do You want to add '{{productDetais.name}}' to S3op Cart?"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+        Buy
+      </button>
+    </div>
+
+  </mat-card>

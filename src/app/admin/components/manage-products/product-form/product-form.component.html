@@ -1,0 +1,52 @@
+<div class="product-form" *ngIf="product">
+  <form class="product-form-edit"
+    (ngSubmit)="onSaveProduct()">
+    <div>
+      <label for="productId">Enter product:</label>
+      <input
+        type="text"
+        [(ngModel)]="product.id"
+        name="productId">
+    </div>
+    <div>
+      <label for="productName">Enter Name:</label>
+      <input
+        type="text"
+        [(ngModel)]="product.name"
+        name="productName">
+    </div>
+    <div>
+      <label for="productDescription">Enter Descriptiion:</label>
+      <textarea
+        type="text"
+        [(ngModel)]="product.description"
+        name="productDescription"></textarea>
+    </div>
+    <div>
+      <label for="productCategory">Enter Category:</label>
+      <input
+        type="text"
+        [(ngModel)]="product.category"
+        name="productCategory">
+    </div>
+    <div>
+      <label for="productAvailable">Is Available:</label>
+      <input
+        type="checkbox"
+        [(ngModel)]="product.isAvailable"
+        name="productAvailable">
+    </div>
+    <div>
+      <label for="productPrice">Enter Price:</label>
+      <input
+        type="text"
+        [(ngModel)]="product.price"
+        name="productPrice">
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary">
+      Save
+    </button>
+  </form>
+</div>

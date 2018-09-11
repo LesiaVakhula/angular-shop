@@ -1,0 +1,8 @@
+<p>{{product.id}}</p>
+<p>{{product.name}}</p>
+<p>{{product.description}}</p>
+<p>{{product.category}}</p>
+<p>{{product.isAvailable ? 'Yes':"No"}}</p>
+<p>{{product.price}}</p>
+<p><img [src]="product.imgUrl"></p>      
+<p><button (click)="edit()">Edit</button></p>      

@@ -1,0 +1,13 @@
+<div class="login-main">
+  <h3 class="login-title">Login Form:</h3>
+  <form *ngIf="user"
+    class="login-form"
+    #form="ngForm">
+    <label for="userName">Enter name:</label>
+    <input type="text" [(ngModel)]="user.name" name="userName">
+    
+    <label for="userPassword">Enter password:</label>
+      <input type="text" [(ngModel)]="user.password" name="userPassword">
+    <button (click)="login()">log in</button>
+  </form>
+</div>
