@@ -1,3 +1,15 @@
-<p>
-  admin-order-list works!
-</p>
+<div *ngIf="orders">
+  <div class="order-item" *ngFor="let order of orders; index as i">
+    <p class="order-number">Order №: {{i}}</p>
+    <div 
+      class="order-item-prduct"
+      *ngFor="let product of order; index as k">
+      <p>{{k}}</p>
+      <p>{{product.id}}</p>
+      <p>{{product.name}}</p>
+      <p>{{product.price}}</p>
+      <p>{{product.quantity}}</p>
+      <P>Total: {{product.price*product.quantity}}</P>
+    </div>
+  </div>
+</div>

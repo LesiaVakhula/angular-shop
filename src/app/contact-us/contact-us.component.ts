@@ -5,11 +5,11 @@ import { GeneratorSequence, SequenceGeneratorFactory } from '../core/services/se
 
 
 @Component({
-  selector: 'app-contuct-us',
-  templateUrl: './contuct-us.component.html',
-  styleUrls: ['./contuct-us.component.css']
+  selector: 'app-contact-us',
+  templateUrl: './contact-us.component.html',
+  styleUrls: ['./contact-us.component.css']
 })
-export class ContuctUsComponent implements OnInit {
+export class ContactUsComponent implements OnInit {
 
   constructor(
     @Optional() private localStorageService: LocalStorageService,

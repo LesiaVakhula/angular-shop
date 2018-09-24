@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../shared/product.model';
 import { Subject, of, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +10,15 @@ export class ShopCartService {
   shopListProduct: Product[] = [];
   allOrders: Product[][] = [];
   channel = new Subject<{product: Product, action: string, id?: number}>();
+  private ordersUrl = 'http://localhost:3000/orders';
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
- changeArray(obj) {
-    const { action, product, id } = obj;
+ changeProductList(data) {
+    const { action, product, id } = data;
   if (action === 'add') {
-    console.log(this.shopListProduct);
     const newProduct = this.shopListProduct.find(item => item.id === product.id);
     newProduct ? newProduct.quantity++ : this.shopListProduct.push(product);
   } else {
@@ -27,21 +30,18 @@ export class ShopCartService {
       this.shopListProduct.splice(index, 1);
     }
   }
-  console.log(this.shopListProduct);
 }
 
   getShopProducts() {
-    console.log(this.shopListProduct);
     return this.shopListProduct;
   }
 
-  changeProduct(obj): void {
-    console.log(this.shopListProduct);
-    this.changeArray(obj);
+  changeProduct(data): void {
+    this.changeProductList(data);
   }
 
-  getAmount(array) {
-    return array.reduce((sumItem, item) => (sumItem + item.price * item.quantity), 0);
+  getAmount(list) {
+    return list.reduce((sumItem, item) => (sumItem + item.price * item.quantity), 0);
   }
 
   getQuantity(array) {
@@ -49,7 +49,9 @@ export class ShopCartService {
   }
 
   addOrders(order: Product[]) {
-    this.allOrders.push(order);
+    // this.allOrders.push(order);
+    this.http.post( this.ordersUrl, order)
+      .subscribe(response => console.log(response));
   }
 
   getAllOrders() {

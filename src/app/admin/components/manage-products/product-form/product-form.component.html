@@ -1,9 +1,8 @@
 <div class="product-form" *ngIf="product">
-  <form class="product-form-edit"
-    (ngSubmit)="onSaveProduct()">
+  <form class="product-form-edit">
     <div>
       <label for="productId">Enter product:</label>
-      <input
+      <input #productId
         type="text"
         [(ngModel)]="product.id"
         name="productId">
@@ -25,7 +24,7 @@
     <div>
       <label for="productCategory">Enter Category:</label>
       <input
-        type="text"
+        type="number"
         [(ngModel)]="product.category"
         name="productCategory">
     </div>
@@ -39,14 +38,28 @@
     <div>
       <label for="productPrice">Enter Price:</label>
       <input
-        type="text"
+        type="number"
         [(ngModel)]="product.price"
         name="productPrice">
     </div>
+    <div>
+      <label for="productPrice">Choose image:</label>
+      <input
+        type="file"
+        [(ngModel)]="product.imgUrl"
+        name="productImage">
+    </div>
     <button
-      type="submit"
+      #saveBtn
+      (click)="onSaveProduct()"
       class="btn btn-primary">
       Save
+    </button>
+    <button
+      #addBtn
+      (click)="onAddProduct()"
+      class="btn btn-primary">
+      Add
     </button>
   </form>
 </div>

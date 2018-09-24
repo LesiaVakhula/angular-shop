@@ -9,7 +9,6 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProductsArrayService {
-  // allProductsList: Product[];
   allProductsList = PRODUCTS;
   constructor() {
   }
@@ -21,7 +20,7 @@ export class ProductsArrayService {
   getProduct(id: number): Observable<Product> {
     return this.getAllProducts()
                 .pipe(
-                  map((products: Product[]) => products.find(product => product.id === +id) )
+                  map((products: Product[]) => products.find(product => product.id === id) )
                 );
   }
 
@@ -36,8 +35,4 @@ export class ProductsArrayService {
     this.allProductsList = {...products};
     console.log(this.allProductsList);
   }
-
-  // updateProduct(product: Product) {
-
-  // }
 }

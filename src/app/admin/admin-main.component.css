@@ -1,0 +1,9 @@
+.btn-manage{
+    background: #d6d6d6;
+    margin: 5px;
+}
+
+.admin-btn-section {
+  display: flex;
+  justify-content: flex-end;
+}

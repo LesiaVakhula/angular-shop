@@ -4,7 +4,8 @@ import { switchMap } from 'rxjs/operators';
 
 import { Product } from '../../../shared/product.model';
 import { pipe } from 'rxjs';
-import { ProductsService } from '../../services/products.service';
+// import { ProductsService } from '../../services';
+import { ProductPromiseService } from '../../../core/services';
 
 @Component({
   selector: 'app-product-details',
@@ -16,17 +17,18 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private productsService: ProductsService,
+    // private productsService: ProductsService,
+    private productPromiseService: ProductPromiseService
    ) { }
 
   ngOnInit() {
     this.route.paramMap.
       pipe(
         switchMap((params: Params) =>
-          this.productsService.getProduct(+params.get('productID'))
+          this.productPromiseService.getProduct(+params.get('productID'))
        )
       )
-      .subscribe(product => (this.productDetais = product), err => console.log(err));
+      .subscribe(product => this.productDetais = product, err => console.log(err));
    }
 
   onBuy() {

@@ -1,8 +1,19 @@
+ul{
+    list-style: none;
+    padding: 0;
+}
+
 .table-title{
     display: flex;
 }
+
 .table-title p{
     padding: 5px 10px;
-    width: 12%;
     text-align: center;
+    width: 12%;
+}
+
+.btn-all-products{
+    background: #fcd0ed;
+    margin: 5px;
 }

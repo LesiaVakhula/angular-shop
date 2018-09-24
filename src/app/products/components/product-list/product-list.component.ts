@@ -6,6 +6,7 @@ import { switchMap } from 'rxjs/operators';
 import { ProductsService } from '../../services/products.service';
 import { ShopCartService } from '../../../cart/services/shop-cart.service';
 import { Product } from '../../../shared/product.model';
+import { ProductPromiseService } from '../../../core/services';
 
 @Component({
   selector: 'app-product-list',
@@ -13,12 +14,14 @@ import { Product } from '../../../shared/product.model';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  productList$: Observable<Product[]>;
+  // productList$: Observable<Product[]>;
+  productList: Promise<Product[]>;
   product: Product;
 
   constructor(
-    private productsService: ProductsService,
+    // private productsService: ProductsService,
     private shopCartService: ShopCartService,
+    private productPromiseService: ProductPromiseService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -28,7 +31,8 @@ export class ProductListComponent implements OnInit {
   }
 
   getProductList(): void {
-    this.productList$ = this.productsService.getProductList();
+    // this.productList$ = this.productsService.getProductList();
+    this.productList = this.productPromiseService.getProducts();
   }
 
   buyProduct(obj): void {

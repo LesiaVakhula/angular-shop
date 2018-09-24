@@ -10,11 +10,17 @@ import { Product } from '../../../../shared/product.model';
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
   @Output() editProduct: EventEmitter<number> = new EventEmitter<number>();
+  @Output() deleteProduct: EventEmitter<Product> = new EventEmitter<Product>();
   constructor() { }
 
   ngOnInit() {
   }
+
   edit() {
     this.editProduct.emit(this.product.id);
+  }
+
+  delete() {
+    this.deleteProduct.emit(this.product);
   }
 }

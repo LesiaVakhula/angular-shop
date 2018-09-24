@@ -9,6 +9,8 @@ import {MatTableModule} from '@angular/material/table';
 import { StyleItemShopDirective } from './style-item-shop.directive';
 import { ChangeStylesDirective } from './directives/change-styles.directive';
 import { OrderByPipe } from './pipes/order-by.pipe';
+import { CategoryPipe } from './pipes/category.pipe';
+
 
 @NgModule({
   imports: [
@@ -27,12 +29,14 @@ import { OrderByPipe } from './pipes/order-by.pipe';
     MatTableModule,
     StyleItemShopDirective,
     ChangeStylesDirective,
-    OrderByPipe
+    OrderByPipe,
+    CategoryPipe
   ],
   declarations: [
     StyleItemShopDirective,
     ChangeStylesDirective,
-    OrderByPipe
+    OrderByPipe,
+    CategoryPipe
   ]
 })
 export class SharedModule { }

@@ -5,6 +5,7 @@ import { ProductFormComponent } from './components/manage-products/product-form/
 import { AdminProductListComponent } from './components/manage-products/admin-product-list/admin-product-list.component';
 import { AdminOrderListComponent } from './components/manage-orders/admin-order-list/admin-order-list.component';
 import { AuthGuard } from '../core/guards/auth.guard';
+import { ProductResolveGuard } from './guards/product-resolve.guard';
 
 const routes: Routes = [
   {
@@ -14,23 +15,30 @@ const routes: Routes = [
     children: [
       {
         path: 'allproducts',
-        component: AdminProductListComponent,
         children: [
           {
             path: 'editproduct/:productID',
-            component: ProductFormComponent
+            component: ProductFormComponent,
+            resolve: {
+              product: ProductResolveGuard
+            }
+          },
+          {
+            path: 'add',
+            component: ProductFormComponent,
+            resolve: {
+              product: ProductResolveGuard
+            }
+          },
+          {
+            path: '',
+            component: AdminProductListComponent
           }
         ]
       },
       {
         path: 'allorders',
         component: AdminOrderListComponent,
-        // children: [
-        //   {
-        //     path: 'editproduct/:productID',
-        //     component: ProductFormComponent
-        //   }
-        // ]
       }
     ]
   },

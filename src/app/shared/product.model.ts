@@ -1,7 +1,8 @@
 export enum ProductCategory {
     book = 1,
     pen,
-    pencil
+    pencil,
+    any
 }
 
 export interface Product {

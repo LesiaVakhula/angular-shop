@@ -4,6 +4,7 @@ import { Directive, Input, ElementRef, Renderer2, HostListener } from '@angular/
   selector: '[appChangeStyles]'
 })
 export class ChangeStylesDirective {
+  // tslint:disable-next-line:no-input-rename
   @Input('appChangeStyles') data: string;
 
   constructor(private element: ElementRef, private render: Renderer2) { }
