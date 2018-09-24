@@ -14,12 +14,10 @@ import { ProductPromiseService } from '../../../core/services';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  // productList$: Observable<Product[]>;
   productList: Promise<Product[]>;
   product: Product;
 
   constructor(
-    // private productsService: ProductsService,
     private shopCartService: ShopCartService,
     private productPromiseService: ProductPromiseService,
     private router: Router,
@@ -31,7 +29,6 @@ export class ProductListComponent implements OnInit {
   }
 
   getProductList(): void {
-    // this.productList$ = this.productsService.getProductList();
     this.productList = this.productPromiseService.getProducts();
   }
 
@@ -41,7 +38,6 @@ export class ProductListComponent implements OnInit {
   }
 
   getProductDetails(product: Product) {
-    // const link = ['product', product.id];
     const link = [ {outlets: {primary: ['product', product.id],  feedback: ['feedback'] }} ];
     this.router.navigate(link, {relativeTo: this.route});
   }

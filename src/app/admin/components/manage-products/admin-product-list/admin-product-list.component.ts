@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { map } from 'rxjs/operators';
+// import { map } from 'rxjs/operators';
 
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from '../../../../shared/product.model';
-import { ProductsArrayService } from '../../../services/products-array.service';
-import { Observable } from 'rxjs';
+// import { ProductsArrayService } from '../../../services/products-array.service';
+// import { Observable } from 'rxjs';
 import { ProductPromiseService } from '../../../../core/services';
 
 @Component({

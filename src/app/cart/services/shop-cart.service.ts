@@ -49,7 +49,6 @@ export class ShopCartService {
   }
 
   addOrders(order: Product[]) {
-    // this.allOrders.push(order);
     this.http.post( this.ordersUrl, order)
       .subscribe(response => console.log(response));
   }

@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import { Product } from './shared/product.model';
+// import { Product } from './shared/product.model';
 import { AuthService } from './core/services/auth.service';
 import { Router } from '@angular/router';
 

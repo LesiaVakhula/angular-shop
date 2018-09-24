@@ -25,7 +25,6 @@ import { SharedModule } from '../shared/shared.module';
     AdminProductListComponent,
     ProductItemComponent,
     ProductFormComponent,
-    // CategoryPipe
   ],
   providers: [
     ProductResolveGuard

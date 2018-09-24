@@ -21,7 +21,6 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
       console.log('CanActivateGuard is called');
       const { url } = state;
-    // console.log(state);
       return this.checkLogin(url);
   }
 
@@ -30,7 +29,6 @@ export class AuthGuard implements CanActivate {
       return true;
     }
     this.authService.redirectUrl = url;
-    // console.log(this.authService.redirectUrl);
     this.router.navigate(['/login']);
     return false;
   }
