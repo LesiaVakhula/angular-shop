@@ -1,0 +1,7 @@
+.valid-error input{
+    border: 1px solid #b10e0e;
+    color: #b10e0e;
+}
+.valid-error label{
+    color: #b10e0e;
+}

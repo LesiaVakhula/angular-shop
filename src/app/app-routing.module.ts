@@ -7,11 +7,16 @@ import { ProductComponent } from './products/components/product/product.componen
 import { CartComponent } from './cart/cart.component';
 import { AdminMainComponent } from './admin/admin-main.component';
 import { LoginComponent } from './core/components/login/login.component';
+import { ProcessOrderComponent } from './core/components/process-order/process-order.component';
 
 const routes: Routes = [
   {
     path: 'shopcart',
     component: CartComponent,
+  },
+  {
+    path: 'createorder',
+    component: ProcessOrderComponent,
   },
   {
     path: 'login',

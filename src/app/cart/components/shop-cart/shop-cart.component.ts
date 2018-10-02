@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { OrderByPipe } from '../../../shared/pipes/order-by.pipe';
 import { ShopCartService } from '../../services/shop-cart.service';
 import { Product } from '../../../shared/product.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shop-cart',
@@ -19,6 +20,7 @@ export class ShopCartComponent implements OnInit {
 
 
   constructor(
+    private router: Router,
     private location: Location
   ) { }
 
@@ -26,6 +28,7 @@ export class ShopCartComponent implements OnInit {
   }
 
   onConfirm() {
+    this.router.navigate(['/createorder']);
     this.confirmOrder.emit('ok');
   }
   goBack() {

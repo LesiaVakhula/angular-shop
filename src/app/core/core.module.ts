@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InjectionToken } from '@angular/core';
 
 import { GeneratorSequence, SequenceGeneratorFactory } from './services/sequence-generator.factory';
@@ -9,6 +9,7 @@ import {
   ProductPromiseService,
   OrderManageService
   } from './services';
+import { ProcessOrderComponent } from './components/process-order/process-order.component';
 
 const Constants_Service = { App: 'TaskManager', Ver: '1.0' };
 const ConstantsService = new InjectionToken<{}>('ConstantsService');
@@ -16,9 +17,10 @@ const ConstantsService = new InjectionToken<{}>('ConstantsService');
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, ProcessOrderComponent],
   providers: [
     ProductPromiseService,
     OrderManageService,

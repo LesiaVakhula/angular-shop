@@ -1,0 +1,103 @@
+<form (ngSubmit)="confirmOrder()" [formGroup]="createOrderForm">
+  <div class="first-name"
+    [ngClass]="{'valid-error': errorMesage.firstName}">
+    <label for="firtNameId">Enter first name:</label>
+    <input type="text"
+      placeholder="First Name..."
+      id="firtNameId"
+      (blur)="onBlur('firstName')"
+      formControlName="firstName">
+    <!-- <span *ngIf="(createOrderForm.get('firstName').touched || createOrderForm.get('firstName').dirty) && createOrderForm.get('firstName').errors">
+      <span *ngIf="createOrderForm.get('firstName').hasError('required')">Please enter your first name</span>
+    </span> -->
+    <span *ngIf="errorMesage.firstName">
+      {{errorMesage.firstName}}
+    </span>
+  </div>
+  <div class="last-name"
+    [ngClass]="{'valid-error': errorMesage.lastName}">
+    <label for="lastNameId">Enter last name:</label>
+    <input type="text"
+      placeholder="Last Name..."
+      id="lastNameId"
+      (blur)="onBlur('lastName')"
+      formControlName="lastName">
+    <!-- <span *ngIf="(createOrderForm.get('lastName').touched || createOrderForm.get('lastName').dirty) && createOrderForm.get('lastName').errors">
+      <span *ngIf="createOrderForm.get('lastName').hasError('required')">Please enter your last name</span>
+    </span> -->
+    <span *ngIf="errorMesage.lastName">
+      {{errorMesage.lastName}}
+    </span>
+  </div>
+  <div class="phone"
+    [ngClass]="{'valid-error': errorMesage.phone}">
+    <label for="phoneId">Enter phone:</label>
+    <input type="text"
+      placeholder="Phone..."
+      id="phoneId"
+      (blur)="onBlur('phone')"
+      formControlName="phone">
+      <!-- <span *ngIf="(createOrderForm.get('phone').touched || createOrderForm.get('phone').dirty) && createOrderForm.get('phone').errors">
+        <span *ngIf="createOrderForm.get('phone').hasError('required')">Please enter your phone number!</span>
+        <span *ngIf="createOrderForm.get('phone').hasError('pattern')">Please enter 10 numbers!</span>
+      </span> -->
+      <span *ngIf="errorMesage.phone">
+        {{errorMesage.phone}}
+      </span>
+  </div>
+  <div class="email"
+    [ngClass]="{'valid-error': errorMesage.email}">
+    <label for="emailId">Enter email:</label>
+    <input type="text"
+      placeholder="Email..."
+      id="emailId"
+      (blur)="onBlur('email')"
+      formControlName="email">
+      <span *ngIf="errorMesage.email">
+        {{errorMesage.email}}
+      </span>
+  </div>
+  <div class="need-delivery">
+    <p>Need delivery?</p>
+    <label class="radio-delivery">Yes
+      <input type="radio"
+        value="yes"
+        formControlName="needDelivery">
+    </label>
+    <label class="radio-delivery">No
+      <input type="radio"
+        value="no"
+        formControlName="needDelivery">
+    </label>
+  </div>
+  <div class="address" *ngIf="delivery">
+    <p>Enter delivery address:</p>
+    <label for="citylId">City:</label>
+    <input type="text"
+      placeholder="City..."
+      id="cityId"
+      formControlName="city">
+    <label for="citylId">Street:</label>
+    <input type="text"
+      placeholder="Street..."
+      id="streetId"
+      formControlName="street">
+  </div>
+  <div formArrayName="phones">
+    <div *ngFor="let phone of phones.controls; let i=index" [formGroupName]="i">
+      <div>
+        <label attr.for="{{'phone'+i}}">{{'Additional phone:'+i}}</label>
+        <input type="text"
+          id="{{'phone'+i}}"
+          placeholder="{{'phone'+i}}"
+          formControlName="phone">
+          <button (click)="onDeleteNumber(i)">delete number</button>
+      </div>
+    </div>
+  </div>
+  
+  <button type="submit" >Confirm</button>
+</form>
+<div>
+  <button (click)="onAddPhone()">Add addition phone</button>
+</div>
